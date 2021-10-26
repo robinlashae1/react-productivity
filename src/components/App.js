@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header"
 import Myprogress from './MyProgress'
 import Mind from './Mind'
@@ -12,6 +12,8 @@ import Home from "./Home"
 
 
 function App() {
+   const history = useHistory()
+console.log(history.push)
   return (
     <div >
       <Header />
@@ -30,6 +32,9 @@ function App() {
         </Route>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path= "*" >
+          <p>404!!!!</p>
         </Route>
       </Switch>
 

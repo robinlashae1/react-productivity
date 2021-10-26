@@ -3,7 +3,7 @@ import React from 'react'
 function Spirit() {
     return (
         <div>
-            <p>Spirit</p>
+           <p>Spirit</p> 
         </div>
     )
 }
