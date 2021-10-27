@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Spirit() {
+function Spirit({task:{task,priority,completed}}) {
     return (
         <div>
-           <p>Spirit</p> 
+    <p>task: {task} priority: {priority} comepleted?{completed} </p>
         </div>
     )
 }

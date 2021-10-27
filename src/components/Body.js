@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Body() {
+function Body({task:{task,priority,completed}}) {
+    console.log("hello",task)
     return (
         <div>
-            <p> body</p>
+            <p>task: {task} priority: {priority} comepleted?{completed} </p>
         </div>
     )
 }

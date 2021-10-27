@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Mind() {
+function Mind({task:{task,priority,completed}}) {
     return (
         <div>
-            <p>Mind</p>
+           <p>task: {task} priority: {priority} comepleted?{completed} </p>
         </div>
     )
 }
