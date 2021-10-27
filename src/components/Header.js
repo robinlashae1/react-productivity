@@ -3,17 +3,20 @@ import Form from "./Form"
 import { NavLink } from "react-router-dom";
 import styled  from "styled-components";
 
-function Header({formHanlder}) {
+
+function Header({formHanlder,sortHandler,sorted}) {
 const [displayForm, setdisplayForm] = useState(false)
 
     return (
 <HeaderContainer>
         <div>
           <header>
-            Header goes here        
+            Header goes here    ggg    
         </header>  
-       
-       
+        <label>ort:</label>
+        <input type="checkbox" onChange={()=>sortHandler()} checked={sorted}  ></input>
+
+
         <nav  style= {{padding: "50px"}}  >
         <NavLink style= {{padding: "50px"}} to="/">Home</NavLink>
       <NavLink style= {{padding: "50px"}} to="/body">body</NavLink>

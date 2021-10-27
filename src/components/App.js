@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header"
 import Myprogress from './MyProgress'
@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
 const [fetchedTasks, setFetchedTask] = useState(null)  
+const [sorted,setsorted]=useState(false)
 const {formOBJ,setFormOObj}=useState({
 task: "",
 category: "",
@@ -23,7 +24,6 @@ id:""
 
 
 })
-
 
 
 
@@ -42,7 +42,22 @@ function formHanlder(e){
 
 }
 
+function sortHandler(){
+setsorted(!sorted)
+let sortKey = "id"
+if (sorted ===false) {sortKey= "id"}
+if (sorted ===true){ sortKey= "priority"}
 
+let result = fetchedTasks.sort((a,b)=> {
+if (a[sortKey]>b[sortKey]) return 1
+if (b[sortKey]>a[sortKey]) return -1 
+if (a[sortKey]=b[sortKey]) return 0 
+
+
+})
+setFetchedTask(result)
+
+}
 
 
 
@@ -59,7 +74,10 @@ if(!fetchedTasks) return <p>Loading</p>
 
   return (
     <div >
-      <Header  formHanlder={formHanlder} />
+      <Header 
+      sortHandler={sortHandler}
+      sorted={sorted}
+      formHanlder={formHanlder} />
       <Switch >
         <Route path ="/body">
         {fetchedTasks.filter(task=>task.category ==="body").map(task=> <Body key={task.id} task={task} />)}
