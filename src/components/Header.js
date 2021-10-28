@@ -3,7 +3,6 @@ import Form from "./Form"
 import { NavLink } from "react-router-dom";
 import styled  from "styled-components";
 
-
 function Header({formHanlder,sortHandler,sorted}) {
 const [displayForm, setdisplayForm] = useState(false)
 

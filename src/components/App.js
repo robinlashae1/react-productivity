@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 function App() {
 const [fetchedTasks, setFetchedTask] = useState(null)  // This is where we store the get requests
 const [DOMUpdater, setDOMUpdater]  = useState(0)  /// just a tool to update the DOM
-const [sorted,setsorted]=useState(false) //// Used to sort 
+const [sorted,setsorted]=useState(true) //// Used to sort 
 
 const {formOBJ,setFormOObj}=useState({              /// Variable where we store form Data
 task: "",
@@ -89,7 +89,7 @@ if(!fetchedTasks) return <p>Loading</p> /////// Loading so the fetch doesn't scr
       formHanlder={formHanlder} />
       <Switch >
         <Route path ="/body">  
-        {/* Body is where I am doing most of my new code, I will copy over the data once completed  */}
+        {/* Body is where I am doing most of my new code, I will copy over the data once completed */}
         {fetchedTasks.filter(task=>task.category ==="body").map(task=> <Body DOMHandler={DOMHandler} key={task.id} task={task} />)} 
         </Route>
         <Route path="/spirit" >
