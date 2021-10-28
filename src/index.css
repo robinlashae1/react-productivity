@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.goalBar{
+  font: Arial;
+  color:black;
+  background-color:lavender;
+  width: 100%;
+  height: 75px;
+  border-style: solid;
+  border-color: black;
+  margin-top: 10px;
+}
