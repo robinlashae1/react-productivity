@@ -1,31 +1,31 @@
 {
   "tasks": [
     {
-      "task": "Workout twice a day ",
+      "task": "Workout once  ",
       "category": "body",
       "priority": "7",
-      "completed": false,
+      "completed": true,
       "id": 1
     },
     {
       "task": " meditate",
       "category": "spirit",
       "priority": "3",
-      "completed": true,
+      "completed": false,
       "id": 2
     },
     {
       "task": " study for 42 hours",
       "category": "mind",
       "priority": "9",
-      "completed": true,
+      "completed": false,
       "id": 3
     },
     {
       "task": " eat two fruits ",
       "category": "body",
-      "priority": "6",
-      "completed": false,
+      "priority": "3",
+      "completed": true,
       "id": 4
     },
     {
@@ -50,25 +50,11 @@
       "id": 7
     },
     {
-      "task": "Lift 10 lbs",
+      "task": "Lift 10 lbs  ",
       "category": "body",
-      "priority": "2",
-      "completed": false,
+      "priority": "233",
+      "completed": true,
       "id": 8
-    },
-    {
-      "task": "Lift 10 lbs",
-      "category": "body",
-      "priority": "3",
-      "completed": false,
-      "id": 9
-    },
-    {
-      "task": "newest item ",
-      "category": "body",
-      "priority": "4",
-      "completed": false,
-      "id": 10
     },
     {
       "task": "Do a math problem",
@@ -76,6 +62,13 @@
       "priority": "24",
       "completed": false,
       "id": 11
+    },
+    {
+      "task": "Lift 20 lbs",
+      "category": "body",
+      "priority": "1",
+      "completed": false,
+      "id": 12
     }
   ]
 }

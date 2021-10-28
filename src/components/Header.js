@@ -8,11 +8,11 @@ const [displayForm, setdisplayForm] = useState(false)
 
     return (
 <HeaderContainer>
-        <div>
-          <header>
-            Header goes here 
-        </header>  
-        <label>Sort:</label>
+        <div >
+          <h1>
+           Productivity
+        </h1>  
+        <label>Sort by Priority:</label>
         <input type="checkbox" onChange={()=>sortHandler()} checked={sorted}  ></input>
 
 
@@ -45,5 +45,11 @@ padding: 10px 24px
 
 
 }
+
+h1{
+  text-align:center;
+}
+
+
 
 `

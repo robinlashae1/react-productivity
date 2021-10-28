@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import styled from 'styled-components'
 
 function Body({DOMHandler,task:{task,priority,completed,id}}) {
 const [EditRequest, setEditRequest] = useState(true)
@@ -53,24 +54,39 @@ function completeHandler(e){ //////////// this handles when a user hits the comp
 }
 
     return (
-        <div style={{display:"flex"}}  > 
+        <Card  > 
+        <nav className="card"  >
         {/* Turerary operator When the user clicks the task it changes to an input and then then sends the data to the edit handler where it can do its thing.  */}
-            {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} >task: {task}   </p>:
+        
+           <div className="header"  >
+            {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} >{task}   </p>:
            <> <input placeholder={task} onChange={(e)=>setNewTask(e.target.value)} value={NewTask}></input>
             <button onClick={editHandler}>Edit</button>
             </>
             }
-  {EditPriorityRequest? <p onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >  .      Priority: {priority}</p>:
+            </div>
+
+            <div className="container"  >
+  {EditPriorityRequest? <p  className="container" onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >Priority: {priority}</p>:
            <> <input placeholder={priority} onChange={(e)=>setNewPriority(e.target.value)} value={NewPriority}></input>
-            <button onClick={priorityEditHandler}>Edit</button>
+            <button className="container"  onClick={priorityEditHandler}>Edit</button>
             </>
-            }
+            } 
             <label>Completed: </label>
 <input type="checkbox" onClick={completeHandler} defaultChecked={completed} ></input>
             <button   onClick={()=>DeleteHandler(id)}        >Delete</button> 
-   
 
-        </div>
+     </div>
+
+        </nav>
+        </Card>
     )
 }
 export default Body
+
+
+
+
+const Card = styled.div `
+
+`
