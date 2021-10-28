@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Form ({formHanlder}) {
+function Form ({formChangeHandler,formHanlder,FormOBJ:{task,category,priority}}) {
     return (
         <form  onSubmit={formHanlder}>
             <label>Category</label>
-            <input type = "text" placeholder= "Category" name ="category"></input>
+            <input  onChange={formChangeHandler} type = "text" placeholder= "Category" name ="category"  value={category} ></input>
             <label> Priority</label>
-            <input type ="number" placeholder ="Please enter a number from 1-10 (10 is the highest)" name="priority"></input>
+            <input type ="number"  onChange={formChangeHandler}  placeholder ="Please enter a number from 1-10 (10 is the highest)" name="priority"value={priority} ></input>
             <label>Task:</label>
-            <input type = "text" placeholder= "task" name ="task"></input>
+            <input type = "text"  onChange={formChangeHandler}  placeholder= "task" name ="task" value={task}></input>
             <button type="submit">x</button>    
        
        
