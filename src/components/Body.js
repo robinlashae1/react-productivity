@@ -6,7 +6,7 @@ const [EditPriorityRequest, setEditPriorityRequest] = useState(true)
 const[NewPriority,setNewPriority] = useState(priority)
 const[NewTask, setNewTask]= useState(task) 
 
-function DeleteHandler(e){
+function DeleteHandler(){
     fetch(`http://localhost:4000/tasks/${id}`,{
         method:"DELETE",
         headers:{"Content-type":"application/json"},
@@ -49,17 +49,18 @@ function completeHandler(e){
 }
 
     return (
-        <div>
-            {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} >task: {task}</p>:
+        <div style={{display:"flex"}}  > 
+            {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} >task: {task}   </p>:
            <> <input placeholder={task} onChange={(e)=>setNewTask(e.target.value)} value={NewTask}></input>
             <button onClick={editHandler}>Edit</button>
             </>
             }
-  {EditPriorityRequest? <p onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >Priority: {priority}</p>:
+  {EditPriorityRequest? <p onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >  .      Priority: {priority}</p>:
            <> <input placeholder={priority} onChange={(e)=>setNewPriority(e.target.value)} value={NewPriority}></input>
             <button onClick={priorityEditHandler}>Edit</button>
             </>
             }
+            <label>Completed: </label>
 <input type="checkbox" onClick={completeHandler} defaultChecked={completed} ></input>
             <button   onClick={()=>DeleteHandler(id)}        >Delete</button>
 

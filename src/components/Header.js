@@ -11,17 +11,18 @@ const [displayForm, setdisplayForm] = useState(false)
 <HeaderContainer>
         <div>
           <header>
-            Header goes here    ggg    
+            Header goes here 
         </header>  
-        <label>ort:</label>
+        <label>Sort:</label>
         <input type="checkbox" onChange={()=>sortHandler()} checked={sorted}  ></input>
 
 
         <nav  style= {{padding: "50px"}}  >
         <NavLink style= {{padding: "50px"}} to="/">Home</NavLink>
-      <NavLink style= {{padding: "50px"}} to="/body">body</NavLink>
+      <NavLink style= {{padding: "50px"}} to="/body">Body</NavLink>
       <NavLink  style= {{padding: "50px"}} to="/mind">Mind</NavLink>
       <NavLink style= {{padding: "50px"}} to="/spirit">Spirit</NavLink>
+      <NavLink style= {{padding: "50px"}} to="/MyProgress">My Progress</NavLink>
       </nav>
       <button type="button" onClick = {()=>setdisplayForm(!displayForm)} value="x">+</button>
     

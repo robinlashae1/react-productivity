@@ -1,8 +1,8 @@
 
 
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "./Header"
-import Myprogress from './MyProgress'
+import MyProgress from './MyProgress'
 import Mind from './Mind'
 import Spirit from "./Spirit"
 import Body from './Body';
@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 function App() {
 const [fetchedTasks, setFetchedTask] = useState(null)  
 const [sorted,setsorted]=useState(false)
+
 const {formOBJ,setFormOObj}=useState({
 task: "",
 category: "",
@@ -89,7 +90,7 @@ if(!fetchedTasks) return <p>Loading</p>
         {fetchedTasks.filter(task=>task.category ==="mind").map(task=> <Mind key={task.id} task={task} />)}
         </Route>
         <Route path="/myprogress">
-          <Myprogress /> 
+        <MyProgress  fetchedTasks={fetchedTasks} />
         </Route>
         <Route exact path="/">
           <Home />

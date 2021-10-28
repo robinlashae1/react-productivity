@@ -4,28 +4,28 @@
       "task": " Workout two Times a Week",
       "category": "body",
       "priority": "9",
-      "completed": true,
+      "completed": false,
       "id": 1
     },
     {
       "task": " meditate",
       "category": "spirit",
       "priority": "3",
-      "completed": false,
+      "completed": true,
       "id": 2
     },
     {
-      "task": " study",
+      "task": " study for 42 hours",
       "category": "mind",
-      "priority": "4",
+      "priority": "9",
       "completed": false,
       "id": 3
     },
     {
-      "task": " eat a fruit ",
+      "task": " eat two fruits",
       "category": "body",
-      "priority": "1",
-      "completed": true,
+      "priority": "5",
+      "completed": false,
       "id": 4
     }
   ]
