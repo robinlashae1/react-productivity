@@ -3,7 +3,7 @@ import Form from "./Form"
 import { NavLink } from "react-router-dom";
 import styled  from "styled-components";
 
-function Header({formHanlder,sortHandler,sorted}) {
+function Header({formChangeHandler,FormOBJ,formHanlder,sortHandler,sorted}) {
 const [displayForm, setdisplayForm] = useState(false)
 
     return (
@@ -25,7 +25,7 @@ const [displayForm, setdisplayForm] = useState(false)
       </nav>
       <button type="button" onClick = {()=>setdisplayForm(!displayForm)} value="x">+</button>
     
-     {displayForm?<p></p> : <Form formHanlder={formHanlder}/>}
+     {displayForm?<p></p> : <Form formChangeHandler={formChangeHandler} FormOBJ={FormOBJ} formHanlder={formHanlder}/>}
         </div>
         </HeaderContainer>
     )
