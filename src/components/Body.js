@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-function Body({task:{task,priority,completed,id}}) {
+function Body({DOMHandler,task:{task,priority,completed,id}}) {
 const [EditRequest, setEditRequest] = useState(true)
 const [EditPriorityRequest, setEditPriorityRequest] = useState(true)
 const[NewPriority,setNewPriority] = useState(priority)
@@ -11,9 +11,10 @@ function DeleteHandler(){
         method:"DELETE",
         headers:{"Content-type":"application/json"},
         body:JSON.stringify({
-                })})}
+                })})
+                DOMHandler()}
 
-function editHandler(e){
+function editHandler(e){           //////// May want to change name this handles edits to the Tasks 
 fetch(`http://localhost:4000/tasks/${id}`,{
 method:"PATCH",
 headers:{"Content-type":"application/json"},
@@ -23,6 +24,7 @@ body:JSON.stringify({
 .then(response => response.json())
 .then(json => console.log(json))
 setEditRequest(!EditRequest)
+DOMHandler()
 }
 
 function priorityEditHandler(e){
@@ -35,9 +37,10 @@ function priorityEditHandler(e){
         .then(response => response.json())
         .then(json => console.log(json))
         setEditPriorityRequest(!EditPriorityRequest)
+        DOMHandler()
 }
 
-function completeHandler(e){
+function completeHandler(e){ //////////// this handles when a user hits the completed checkmark 
     fetch(`http://localhost:4000/tasks/${id}`,{
         method:"PATCH",
         headers:{"Content-type":"application/json"},
@@ -46,10 +49,12 @@ function completeHandler(e){
         })})
         .then(response => response.json())
         .then(json => console.log(json))
+        DOMHandler()
 }
 
     return (
         <div style={{display:"flex"}}  > 
+        {/* Turerary operator When the user clicks the task it changes to an input and then then sends the data to the edit handler where it can do its thing.  */}
             {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} >task: {task}   </p>:
            <> <input placeholder={task} onChange={(e)=>setNewTask(e.target.value)} value={NewTask}></input>
             <button onClick={editHandler}>Edit</button>
@@ -62,7 +67,8 @@ function completeHandler(e){
             }
             <label>Completed: </label>
 <input type="checkbox" onClick={completeHandler} defaultChecked={completed} ></input>
-            <button   onClick={()=>DeleteHandler(id)}        >Delete</button>
+            <button   onClick={()=>DeleteHandler(id)}        >Delete</button> 
+   
 
         </div>
     )
