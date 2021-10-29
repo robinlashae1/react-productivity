@@ -1,0 +1,37 @@
+{
+    "tasks": [
+      {
+        "task": " Workout",
+        "category": "body",
+        "priority": "2",
+        "completed": "false",
+        "id": 1
+
+      },
+      {
+        "task": " meditate",
+        "category": "spirit",
+        "priority": "3",
+        "completed": "false",
+        "id": 2
+
+      },
+      {
+        "task": " study",
+        "category": "mind",
+        "priority": "4",
+        "completed": "false",
+        "id": 3
+      },
+      {
+        "task": " eat right",
+        "category": "body",
+        "priority": "1",
+        "completed": "false",
+        "id": 4
+      }
+
+
+
+    ]
+  }
