@@ -6,6 +6,7 @@ const [EditRequest, setEditRequest] = useState(true)
 const [EditPriorityRequest, setEditPriorityRequest] = useState(true)
 const[NewPriority,setNewPriority] = useState(priority)
 const[NewTask, setNewTask]= useState(task) 
+const[Class, setClass]= useState(false)
 
 function DeleteHandler(){
     fetch(`http://localhost:4000/tasks/${id}`,{
@@ -13,7 +14,7 @@ function DeleteHandler(){
         headers:{"Content-type":"application/json"},
         body:JSON.stringify({
                 })})
-                DOMHandler()}
+               .then(DOMHandler())}
 
 function editHandler(e){           //////// May want to change name this handles edits to the Tasks 
 fetch(`http://localhost:4000/tasks/${id}`,{
@@ -38,10 +39,11 @@ function priorityEditHandler(e){
         .then(response => response.json())
         .then(json => console.log(json))
         setEditPriorityRequest(!EditPriorityRequest)
-        DOMHandler()
+        .then(DOMHandler())
 }
 
 function completeHandler(e){ //////////// this handles when a user hits the completed checkmark 
+    setClass((Class) => !Class);
     fetch(`http://localhost:4000/tasks/${id}`,{
         method:"PATCH",
         headers:{"Content-type":"application/json"},
@@ -50,9 +52,10 @@ function completeHandler(e){ //////////// this handles when a user hits the comp
         })})
         .then(response => response.json())
         .then(json => console.log(json))
-        DOMHandler()
-}
-
+        .then(DOMHandler())}
+        function classHandler(){
+            setClass((Class) => !Class)
+        }
 return (
     <>
     <nav className="card"  >
@@ -67,20 +70,12 @@ return (
         </div>
 
         <div className="container"  >
-            <button  className="completedButton" onClick={completeHandler} defaultChecked={completed} >Completed</button>
-        {/* <button   onClick={()=>DeleteHandler(id)}        >Delete</button>  */}
+            <button className="completedButton" onClick={completeHandler} defaultChecked={completed} >{Class? "Not Completed":"Completed"}</button>
         <button className="Deletebutton" onClick={()=>DeleteHandler(id)}>Delete</button>
 {EditPriorityRequest? <p className="priorityText" onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >Priority: {priority}</p>:
        <> <input placeholder={priority} onChange={(e)=>setNewPriority(e.target.value)} value={NewPriority}></input>
         <button className="container"  onClick={priorityEditHandler}>Edit</button>
-        </>
-        } 
-        {/* <label>Completed: </label>
-<input type="checkbox" onClick={completeHandler} defaultChecked={completed} ></input> */} 
-{/* <button  className="completedButton" onClick={completeHandler} defaultChecked={completed} >Completed</button>
-        {/* <button   onClick={()=>DeleteHandler(id)}        >Delete</button>  */}
-        {/* <button className="Deletebutton" onClick={()=>DeleteHandler(id)}>Delete</button> */}
-
+        </>} 
  </div>
 
     </nav>

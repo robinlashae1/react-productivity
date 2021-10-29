@@ -19,8 +19,8 @@ const [sorted,setsorted]=useState(true) //// Used to sort
 
 const [FormOBJ, setFormOBJ] = useState({              /// Variable where we store form Data
 task: "",
-category: "",
-priority: "",
+category: "mind",
+priority: "1",
 completed: "false",
 id:""
 })
@@ -36,10 +36,12 @@ fetch("http://localhost:4000/tasks")
 
 function formChangeHandler(e){
 setFormOBJ(data=> data={...data,[e.target.name] :e.target.value})
+console.log(e)
 }
 
 function formHanlder(e){
-  e.preventDefault()
+  e.preventDefault();
+  DOMHandler();
   console.log(FormOBJ.category)
 // if (FormOBJ.value ==="Mind" ||FormOBJ.category=== "Body"||FormOBJ.category==="Spirit")
 {
@@ -52,7 +54,6 @@ function formHanlder(e){
       category:FormOBJ.category,
       priority:FormOBJ.priority,
       completed:false,
-      id:FormOBJ.id
     })})
     .then(response => response.json())
     .then(json => console.log(json))

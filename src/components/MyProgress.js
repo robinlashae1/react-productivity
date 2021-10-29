@@ -34,14 +34,7 @@ const data = {
             maintainAspectRatio: false,
             padding:"0px",
             defaultFontSize:"14px"}
-        //[
-        // '#501800',
-        // '#4B5000',
-        // '#175000',
-        // '#003350',
-        // '#35014F'
-        // ],
-        // data: [CompletedNum, NotCompletednum]
+
       }
     ]
   }

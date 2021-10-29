@@ -1,22 +1,22 @@
 import React from 'react'
 
-function Form ({formHanlder, formChangeHandler}) {
+function Form ({formChangeHandler,formHanlder}) {
     return (
         <form  onSubmit={formHanlder} id="formDisplay">
             <label>Category</label>
-            <select onChange={formChangeHandler}>
-                <option value="mind">Mind</option>
-                <option value="body">Body</option>
-                <option value="spirit">Spirit</option>
+            <select name="category" onChange={formChangeHandler} >
+                <option name="category" value="mind">Mind</option>
+                <option name="category" value="body">Body</option>
+                <option name="category" value="spirit">Spirit</option>
             </select> 
             <label> Priority</label>
-            <select onChange={formChangeHandler} >
-                <option value="1">Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
+            <select name="priority" onChange={formChangeHandler} >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
             </select>
             <label>Task:</label>
-            <input type = "text" placeholder= "task" name ="task"></input>
+            <input onChange={formChangeHandler} type = "text" placeholder= "task" name ="task"></input>
             <button type="submit">Submit</button>
         </form>
     )

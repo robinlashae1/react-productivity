@@ -1,32 +1,11 @@
 {
   "tasks": [
     {
-      "task": " meditate",
-      "category": "spirit",
-      "priority": "3",
-      "completed": "false",
-      "id": 2
-    },
-    {
-      "task": " meditate",
-      "category": "spirit",
-      "priority": "3",
-      "completed": false,
-      "id": 2
-    },
-    {
       "task": " study for 41 hours",
       "category": "mind",
       "priority": "9",
       "completed": true,
       "id": 3
-    },
-    {
-      "task": "Take a break!",
-      "category": "mind",
-      "priority": "7",
-      "completed": false,
-      "id": 6
     },
     {
       "task": "Pray",
@@ -36,81 +15,25 @@
       "id": 7
     },
     {
-      "task": "Do a math problem",
+      "task": "go to gym",
       "category": "mind",
-      "priority": "24",
-      "completed": false,
-      "id": 11
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 12
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
+      "priority": "1",
       "completed": false,
       "id": 13
     },
     {
-      "task": "",
-      "category": "",
-      "priority": "",
+      "task": "make bed",
+      "category": "mind",
+      "priority": "2",
       "completed": false,
       "id": 14
     },
     {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 15
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
+      "task": "eat",
+      "category": "body",
+      "priority": "3",
+      "completed": true,
       "id": 16
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 17
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 18
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 19
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 20
-    },
-    {
-      "task": "",
-      "category": "",
-      "priority": "",
-      "completed": false,
-      "id": 21
     }
   ]
 }
