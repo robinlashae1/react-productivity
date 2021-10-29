@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "tasks": [
       {
         "task": " Workout",
@@ -35,3 +36,78 @@
 
     ]
   }
+=======
+  "tasks": [
+    {
+      "task": "Workout once  ",
+      "category": "body",
+      "priority": "7",
+      "completed": true,
+      "id": 1
+    },
+    {
+      "task": " meditate",
+      "category": "spirit",
+      "priority": "3",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "task": " study for 42 hours",
+      "category": "mind",
+      "priority": "9",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "task": " eat two fruits ",
+      "category": "body",
+      "priority": "3",
+      "completed": true,
+      "id": 4
+    },
+    {
+      "task": "Eat all the food",
+      "category": "body",
+      "priority": "2",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "task": "Take a break!",
+      "category": "mind",
+      "priority": "7",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "task": "Pray",
+      "category": "spirit",
+      "priority": "2",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "task": "Lift 10 lbs  ",
+      "category": "body",
+      "priority": "233",
+      "completed": true,
+      "id": 8
+    },
+    {
+      "task": "Do a math problem",
+      "category": "mind",
+      "priority": "24",
+      "completed": false,
+      "id": 11
+    },
+    {
+      "task": "Lift 20 lbs",
+      "category": "body",
+      "priority": "1",
+      "completed": false,
+      "id": 12
+    }
+  ]
+}
+>>>>>>> b663153da6c4f75a6f1d5bb3a458ef6e23d86160
