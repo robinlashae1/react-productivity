@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react'
+import {Pie} from 'react-chartjs-2';
 
 function MyProgress({fetchedTasks})  {
  
 const [CompletedCount, setCompletedCount] = useState(0)
 const [NotCompletedCount, setNotCompletedCount] = useState(0)
-let NotCompletednum  =0
-let CompletedNum =0 
+let NotCompletednum  = 0
+let CompletedNum = 0
 
 useEffect(() => {
     fetchedTasks.filter(task=>{
@@ -16,11 +17,57 @@ useEffect(() => {
         })
 }, [fetchedTasks])
 
+const data = {
+    labels: [
+        'Completed',
+         'Not Completed'],
+    datasets: [
+      {
+        label: 'My progress',
+        data: [CompletedCount, NotCompletedCount],
+        backgroundColor: [
+          '#FAA005',
+          '#FFCE30'
+        ],
+        hoverOffset: 4,
+        options:{responsive: true, 
+            maintainAspectRatio: false,
+            padding:"0px",
+            defaultFontSize:"14px"}
+        //[
+        // '#501800',
+        // '#4B5000',
+        // '#175000',
+        // '#003350',
+        // '#35014F'
+        // ],
+        // data: [CompletedNum, NotCompletednum]
+      }
+    ]
+  }
     return (
+        <>
         <div>
           <p>Completed:{CompletedCount}</p>
           <p>Not Completed:{NotCompletedCount}</p>
         </div>
+        <div>
+        <Pie
+          data={data}
+          options={{
+            title:{
+              display:true,
+              text:'Completed Task',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'right'
+            }
+          }}
+          />
+          </div>
+        </>
     )
 }
 

@@ -23,8 +23,6 @@ category: "",
 priority: "",
 completed: "false",
 id:""
-
-
 })
 console.log(FormOBJ)
 
@@ -43,7 +41,8 @@ setFormOBJ(data=> data={...data,[e.target.name] :e.target.value})
 function formHanlder(e){
   e.preventDefault()
   console.log(FormOBJ.category)
-if (FormOBJ.category==="Mind" ||FormOBJ.category=== "Body"||FormOBJ.category==="Spirit"){
+// if (FormOBJ.value ==="Mind" ||FormOBJ.category=== "Body"||FormOBJ.category==="Spirit")
+{
 
   fetch(`http://localhost:4000/tasks`,{
     method:"POST",
@@ -62,7 +61,7 @@ if (FormOBJ.category==="Mind" ||FormOBJ.category=== "Body"||FormOBJ.category==="
 
 
 }
-else{alert("Please enter a valid category ")}
+// else{alert("Please enter a valid category ")}
 
 
 /// forgot how this works :( 
