@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "task": " meditate",
+      "category": "spirit",
+      "priority": "3",
+      "completed": "false",
+      "id": 2
+    },
+    {
+      "task": " meditate",
+      "category": "spirit",
+      "priority": "3",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "task": " study for 42 hours",
+      "category": "mind",
+      "priority": "9",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "task": "Take a break!",
+      "category": "mind",
+      "priority": "7",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "task": "Pray",
+      "category": "spirit",
+      "priority": "2",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "task": "Do a math problem",
+      "category": "mind",
+      "priority": "24",
+      "completed": false,
+      "id": 11
+    }
+  ]
+}

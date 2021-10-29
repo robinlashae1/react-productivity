@@ -54,32 +54,33 @@ function completeHandler(e){ //////////// this handles when a user hits the comp
 }
 
     return (
-        <Card  > 
+        <div> 
         <nav className="card"  >
         {/* Turerary operator When the user clicks the task it changes to an input and then then sends the data to the edit handler where it can do its thing.  */}
         
            <div className="header"  >
-            {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} >{task}   </p>:
+            {EditRequest? <p onClick={()=>setEditRequest(!EditRequest)} className="taskText">{task} </p>:
            <> <input placeholder={task} onChange={(e)=>setNewTask(e.target.value)} value={NewTask}></input>
-            <button onClick={editHandler}>Edit</button>
+            <button className="button" onClick={editHandler}>Edit</button>
             </>
             }
             </div>
 
             <div className="container"  >
-  {EditPriorityRequest? <p  className="container" onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >Priority: {priority}</p>:
+  {EditPriorityRequest? <p  className="priorityText" onClick={()=>setEditPriorityRequest(!EditPriorityRequest)} >Priority: {priority}</p>:
            <> <input placeholder={priority} onChange={(e)=>setNewPriority(e.target.value)} value={NewPriority}></input>
-            <button className="container"  onClick={priorityEditHandler}>Edit</button>
+            <button className="container"  className="button" onClick={priorityEditHandler}>Edit</button>
             </>
             } 
-            <label>Completed: </label>
-<input type="checkbox" onClick={completeHandler} defaultChecked={completed} ></input>
-            <button   onClick={()=>DeleteHandler(id)}        >Delete</button> 
+            {/* <label>Completed: </label>
+<input type="checkbox" onClick={completeHandler} defaultChecked={completed} className="completedButton"></input> */}
+<button  className="completedButton" onClick={completeHandler} defaultChecked={completed} >Completed</button>
+            {/* <button   onClick={()=>DeleteHandler(id)} className="button" >Delete</button>  */}
+            <button className="Deletebutton" onClick={()=>DeleteHandler(id)}>Delete</button>
 
      </div>
-
         </nav>
-        </Card>
+        </div>
     )
 }
 export default Body

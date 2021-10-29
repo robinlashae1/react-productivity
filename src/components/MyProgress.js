@@ -16,10 +16,6 @@ useEffect(() => {
         })
 }, [fetchedTasks])
 
-
-
-
-
     return (
         <div>
           <p>Completed:{CompletedCount}</p>

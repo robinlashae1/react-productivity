@@ -38,18 +38,12 @@ fetch("http://localhost:4000/tasks")
 
 function formChangeHandler(e){
 setFormOBJ(data=> data={...data,[e.target.name] :e.target.value})
-
-
-
-
 }
-
-
 
 function formHanlder(e){
   e.preventDefault()
   console.log(FormOBJ.category)
-if (FormOBJ.category==="mind" ||FormOBJ.category=== "body"||FormOBJ.category==="spirit"){
+if (FormOBJ.category==="Mind" ||FormOBJ.category=== "Body"||FormOBJ.category==="Spirit"){
 
   fetch(`http://localhost:4000/tasks`,{
     method:"POST",
@@ -60,9 +54,6 @@ if (FormOBJ.category==="mind" ||FormOBJ.category=== "body"||FormOBJ.category==="
       priority:FormOBJ.priority,
       completed:false,
       id:FormOBJ.id
-
-
-
     })})
     .then(response => response.json())
     .then(json => console.log(json))
@@ -80,26 +71,22 @@ else{alert("Please enter a valid category ")}
 }
 
 function sortHandler(){ /////// Sorts data based on priority or ID  --- a checkbox in the header allow the user to toggle 
-setsorted(!sorted)
+  setsorted(!sorted)
 let sortKey = "id"
 if (sorted ===false) {sortKey= "id"}
 if (sorted ===true){ sortKey= "priority"}
 
-let result = fetchedTasks.sort((a,b)=> {
-if (a[sortKey]>b[sortKey]) return -1
-if (b[sortKey]>a[sortKey]) return 1 
-if (a[sortKey]=b[sortKey]) return 0 
-
-
+let result = fetchedTasks.sort((a,b) => {
+if (a[sortKey]>b[sortKey]) {return -1}
+else if (b[sortKey]>a[sortKey]) {return 1}
+else if(a[sortKey]=b[sortKey]){ return 0} 
 })
 setFetchedTask(result) 
-
 }
 
 
 useEffect(() => { ///////////// Used to update the DOM 
   setFetchedTask(fetchedTasks)
-  
 }, [DOMUpdater])
 
 
@@ -109,22 +96,15 @@ function DOMHandler(){ //////////// Used to update the DOM
   console.log("dom updater")
   setDOMUpdater(DOMUpdater+1)
 }
-
-
-
-
-
-
-
   return (
-    <div >
-      <Header  ////// Header - this is where users submit new tasks and can sort by priority 
+    <div id="appContainer">
+      <Header  className="HeaderContainer" ////// Header - this is where users submit new tasks and can sort by priority 
       sortHandler={sortHandler}
       sorted={sorted}
       FormOBJ={FormOBJ}
       formChangeHandler={formChangeHandler}
       formHanlder={formHanlder} />
-     
+     <span id="spannedTitle">
       <Switch >
         <Route path ="/body">  
         {/* Body is where I am doing most of my new code, I will copy over the data once completed */}
@@ -146,6 +126,7 @@ function DOMHandler(){ //////////// Used to update the DOM
           <p>404!!!!</p>
         </Route>
       </Switch>
+      </span>
 
     </div>
   )

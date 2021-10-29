@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Body({task:{task,priority,completed}}) {
+function Priority({task:{task,priority,completed}}) {
     console.log("hello",task)
     return (
         <div>

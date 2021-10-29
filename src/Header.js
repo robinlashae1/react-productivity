@@ -7,10 +7,8 @@ const [displayForm, setdisplayForm] = useState(false)
 
 function Header({formHanlder,sortHandler,sorted}) {
     return(
-        <div id="HeaderContainer">
-        <header>
-            Header goes here        
-        </header> 
+        <div className="HeaderContainer">
+        <header/> 
         <label>Sort based on Priority:</label>
         <input type="checkbox" onChange={()=>sortHandler()} checked={sorted}  ></input>
         <nav  style= {{padding: "50px"}}  >
@@ -24,11 +22,3 @@ function Header({formHanlder,sortHandler,sorted}) {
 }
 export default Header;
 
-const HeaderContainer = styled.div `
-display:Inline;
-button {
-  display:Inline;
-background-color: grey;
-color:white;
-padding: 10px 24px
-}
